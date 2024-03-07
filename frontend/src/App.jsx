@@ -10,6 +10,9 @@ import ResetPasswordPage from "./pages/ResetPasswordPage"
 import ResetPasswordPageConfirm from "./pages/ResetPasswordPageConfirm";
 import ActivatePage from "./pages/ActivatePage";
 import NotFoundPage from "./pages/NotFoundPage";
+import CreateTeamPage from "./pages/CreateTeamPage";
+import UpdateProfilePage from "./pages/UpdateProfilePage";
+import EditTeamPage from "./pages/EditTeamPage";
 
 function App() {
   return (
@@ -25,6 +28,10 @@ function App() {
           <Route path="/password/reset/confirm/:uid/:token" element={<ResetPasswordPageConfirm />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="*" element={<NotFoundPage />} />
+          <Route path="/createteam" element={<CreateTeamPage />} />
+          <Route path="/editteam" element={<EditTeamPage />} />
+          <Route path="/myprofile" element={<UpdateProfilePage />} />
+
         </Routes>
       </Router>
       <ToastContainer />
