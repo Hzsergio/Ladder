@@ -8,7 +8,7 @@ from .serializers import *
 # Create your views here.
 class UserListView(viewsets.ViewSet):
     queryset = User.objects.all()
-    serializer_class = CreateUserSerializer
+    serializer_class = UpdateUserSerializer
     permission_classes = [permissions.AllowAny]
 
     def list(self, request):
