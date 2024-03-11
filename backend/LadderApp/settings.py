@@ -175,11 +175,11 @@ DJOSER = {
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = '06c82ba9c613e2'
-EMAIL_HOST_PASSWORD = 'c399b27a352ffa'
+EMAIL_HOST_USER = 'dbbc858a7186d0'
+EMAIL_HOST_PASSWORD = '1d3096994ee118'
 EMAIL_PORT = '2525'
 DEFAULT_FROM_EMAIL = "info@ladderapp.com"
 DOMAIN = 'localhost:5173'
 SITE_NAME = "Ladder"
 
+EMAIL_USE_TLS = True

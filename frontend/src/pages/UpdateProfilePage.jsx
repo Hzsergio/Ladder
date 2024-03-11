@@ -46,11 +46,11 @@ const UpdateProfilePage = () => {
   };
 
   return (
-    <div>
-      <h1>Edit Your Profile</h1>
+    <div className="container auth__container">
+      <h1 className='main__title'>Edit Your Profile</h1>
       <p>Hello {userInfo.first_name}, your ID is {userInfo.id}</p>
 
-      <form onSubmit={handleSubmit}>
+      <form className="auth__form" onSubmit={handleSubmit}>
         {/* Display existing user data in input fields */}
         <div>
           First Name:
