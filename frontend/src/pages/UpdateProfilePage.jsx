@@ -8,7 +8,8 @@ const UpdateProfilePage = () => {
     first_name: '',
     last_name: '',
     email: '',
-    // Add other fields as needed
+    username: '', // Add username field to the state
+    profile_pic: null,
   });
 
   useEffect(() => {
@@ -27,15 +28,31 @@ const UpdateProfilePage = () => {
     // Update only the username in the local state
     setUserData((prevUserData) => ({
       ...prevUserData,
-      first_name: newUsername,
+      username: newUsername,
+    }));
+  };
+
+  const handleProfilePicChange = (e) => {
+    // Update the profile_pic in the local state
+    setUserData((prevUserData) => ({
+      ...prevUserData,
+      profile_pic: e.target.files[0],
     }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // Create FormData to include existing profile_pic
+    const formData = new FormData();
+    formData.append('first_name', userData.first_name);
+    formData.append('last_name', userData.last_name);
+    formData.append('email', userData.email);
+    formData.append('username', userData.username); // Add username
+    formData.append('profile_pic', userData.profile_pic);
+
     // Send the updated user data back to the server
-    axios.put(`http://localhost:8000/user/${userInfo.id}/`, userData)
+    axios.put(`http://localhost:8000/user/${userInfo.id}/`, formData)
       .then((response) => {
         console.log('Profile updated successfully:', response.data);
       })
@@ -57,7 +74,7 @@ const UpdateProfilePage = () => {
           <input
             type="text"
             value={userData.first_name}
-            onChange={(e) => handleUsernameChange(e.target.value)}
+            onChange={(e) => setUserData({ ...userData, first_name: e.target.value })}
           />
         </div>
         <div>
@@ -76,7 +93,24 @@ const UpdateProfilePage = () => {
             onChange={(e) => setUserData({ ...userData, email: e.target.value })}
           />
         </div>
-        {/* Add other fields as needed */}
+        <div>
+          {/* Input for username */}
+          Username:
+          <input
+            type="text"
+            value={userData.username}
+            onChange={(e) => handleUsernameChange(e.target.value)}
+          />
+        </div>
+        <div>
+          {/* Input for profile_pic */}
+          Profile Picture:
+          <input
+            type="file"
+            accept="image/*"
+            onChange={handleProfilePicChange}
+          />
+        </div>
         <button className="btn btn-primary" type="submit">
           Update Profile
         </button>

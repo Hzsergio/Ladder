@@ -4,17 +4,15 @@ from django.utils.translation import gettext_lazy as _
 from .forms import CustomUserChangeForm, CustomUserCreationForm
 from .models import User
 
-# Register your models here.
-
 class UserAdmin(BaseUserAdmin):
     ordering = ["email"]
     add_form = CustomUserCreationForm
     form = CustomUserChangeForm
     model = User
-    list_display = ["email", "first_name", "last_name", "is_staff", "is_active"]
+    list_display = ["email", "username", "first_name", "last_name", "is_staff", "is_active"]
     list_display_links = ["email"]
-    list_filter = ["email", "first_name", "last_name", "is_staff", "is_active"]
-    search_fields = ["email", "first_name", "last_name"]
+    list_filter = ["email", "username", "first_name", "last_name", "is_staff", "is_active"]
+    search_fields = ["email", "username", "first_name", "last_name"]
     fieldsets = (
         (
             _("Login Credentials"), {
@@ -24,7 +22,7 @@ class UserAdmin(BaseUserAdmin):
         (
             _("Personal Information"),
             {
-                "fields": ('first_name', 'last_name',)
+                "fields": ('username', 'first_name', 'last_name',)
             },
         ),
         (
@@ -43,9 +41,8 @@ class UserAdmin(BaseUserAdmin):
     add_fieldsets = (
             (None, {
                 "classes": ("wide",),
-                "fields": ("email", "first_name", "last_name", "password1", "password2", "is_staff", "is_active"),
+                "fields": ("email", "username", "first_name", "last_name", "password1", "password2", "is_staff", "is_active"),
             },),
         )
-
 
 admin.site.register(User, UserAdmin)
