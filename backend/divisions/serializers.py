@@ -7,6 +7,13 @@ class TeamInDivisionSerializer(serializers.ModelSerializer):
         fields = ('division','team','position')
 
 class DivisionSerializer(serializers.ModelSerializer):
+    admin_email = serializers.SerializerMethodField()
+
     class Meta:
         model = Division
-        fields = ('name','admin','publicProfile')
+        fields = ('name','admin','publicProfile', 'admin_email')
+
+    def get_admin_email(self, obj):
+        return obj.admin.email
+    
+        

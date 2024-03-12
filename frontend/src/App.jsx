@@ -13,6 +13,8 @@ import NotFoundPage from "./pages/NotFoundPage";
 import CreateTeamPage from "./pages/CreateTeamPage";
 import UpdateProfilePage from "./pages/UpdateProfilePage";
 import EditTeamPage from "./pages/EditTeamPage";
+import DivisionsPage from "./pages/DivisionsPage";
+import DivisionDetailsPage from "./pages/DivisionDetails";
 
 function App() {
   return (
@@ -31,6 +33,8 @@ function App() {
           <Route path="/createteam" element={<CreateTeamPage />} />
           <Route path="/editteam" element={<EditTeamPage />} />
           <Route path="/myprofile" element={<UpdateProfilePage />} />
+          <Route path="/divisions" element={<DivisionsPage />} />
+          <Route path="/division/:name" element={<DivisionDetailsPage />} />
 
         </Routes>
       </Router>

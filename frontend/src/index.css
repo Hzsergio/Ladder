@@ -318,8 +318,27 @@ img {
 
 
 
+.division-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;  /* Center horizontally */
+  align-items: center;      /* Center vertically */
+}
 
+.division-box {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  width: 200px;
+  text-align: center;
+  text-decoration: none;
+  color: #007bff;
+  background-color: #007bff;
+}
 
+.division-box:hover {
+  background-color: #ddd;
+}
 
 
 /* ============ COMPONENTS ============ */
