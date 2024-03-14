@@ -8,7 +8,7 @@ class TeamInDivisionSerializer(serializers.ModelSerializer):
 
 class DivisionSerializer(serializers.ModelSerializer):
     admin_email = serializers.SerializerMethodField()
-
+    
     class Meta:
         model = Division
         fields = ('name','admin','publicProfile', 'admin_email')

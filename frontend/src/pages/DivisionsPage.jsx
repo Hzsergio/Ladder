@@ -35,6 +35,10 @@ const DivisionsPage = () => {
           </div>
         ))}
       </div>
+
+      <button className="btn btn-primary" type="submit">
+          Create Division
+        </button>
     </div>
   );
 };
