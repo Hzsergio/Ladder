@@ -25,11 +25,11 @@ const Nav = () => {
                 {user ?
                     <>
                         <NavLink className='nav-childs' to="/dashboard">Dashboard</NavLink>
-                        <NavLink className='nav-childs' to="/" onClick={handleLogout}>Logout</NavLink>
                         <NavLink className='nav-childs' to="/createteam">Create Team</NavLink>
-                        <NavLink className='nav-childs' to="/editteam">Edit Team</NavLink>
+                        <NavLink className='nav-childs' to="/allteams"> Teams</NavLink>
                         <NavLink className='nav-childs' to="/myprofile">Profile</NavLink>
                         <NavLink className='nav-childs' to="/divisions">Divisions</NavLink>
+                        <NavLink className='nav-childs' to="/" onClick={handleLogout}>Logout</NavLink>
 
                     </>
                     :

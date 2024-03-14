@@ -15,6 +15,8 @@ import UpdateProfilePage from "./pages/UpdateProfilePage";
 import EditTeamPage from "./pages/EditTeamPage";
 import DivisionsPage from "./pages/DivisionsPage";
 import DivisionDetailsPage from "./pages/DivisionDetails";
+import TeamPage from "./pages/TeamsPage";
+import TeamDetailsPage from "./pages/TeamDetails";
 
 function App() {
   return (
@@ -35,6 +37,8 @@ function App() {
           <Route path="/myprofile" element={<UpdateProfilePage />} />
           <Route path="/divisions" element={<DivisionsPage />} />
           <Route path="/division/:name" element={<DivisionDetailsPage />} />
+          <Route path="/allteams" element={<TeamPage />} />
+          <Route path="/team/:id" element={<TeamDetailsPage />} />
 
         </Routes>
       </Router>
